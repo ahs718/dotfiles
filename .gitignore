@@ -1,5 +1,2 @@
-Code/
-pulse/
-gtk-3.0
-gh/
-dconf/
+.vscode/
+__pycache__
