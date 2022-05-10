@@ -6,6 +6,9 @@ window:
     instance: Alacritty
     general: Alacritty
   opacity: 0.95
+  dimensions:
+    columns: 80
+    lines: 24
 
 scrolling:
   history: 10000
