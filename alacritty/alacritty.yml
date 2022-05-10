@@ -1,11 +1,11 @@
 window:
   padding:
-    x: 5
-    y: 5
+    x: 18
+    y: 18
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.85
+  opacity: 0.95
 
 scrolling:
   history: 10000
@@ -25,14 +25,14 @@ font:
   bold_italic:
     family: Cascadia Mono
     style: BoldItalic
-  size: 18
+  size: 20
 draw_bold_text_with_bright_colors: true
 
 # Catppuccin!
 colors:
   # Default colors
   primary:
-    background: '0x1E1D2F'
+    background: '0x161320'
     foreground: '0xD9E0EE'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
