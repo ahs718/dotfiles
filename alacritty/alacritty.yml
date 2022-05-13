@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.95
+  opacity: 0.75
   dimensions:
     columns: 80
     lines: 24
@@ -28,7 +28,7 @@ font:
   bold_italic:
     family: Cascadia Mono
     style: BoldItalic
-  size: 20
+  size: 16
 draw_bold_text_with_bright_colors: true
 
 # Catppuccin!
