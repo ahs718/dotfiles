@@ -17,18 +17,18 @@ scrolling:
 
 font:
   normal:
-    family: Cascadia Mono
-    style:  Regular
+    family: CaskaydiaCove Nerd Font
+    style:  Book
   bold:
-    family: Cascadia Mono
+    family: CaskaydiaCove Nerd Font
     style:  Bold
   italic:
-    family: Cascadia Mono
+    family: CaskaydiaCove Nerd Font
     style:  MediumItalic
   bold_italic:
-    family: Cascadia Mono
+    family: CaskaydiaCove Nerd Font
     style: BoldItalic
-  size: 16
+  size: 16 
 draw_bold_text_with_bright_colors: true
 
 # Catppuccin!
