@@ -142,7 +142,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Cascadia Mono",
+    font="Caskaydia Cove Nerd Font",
     fontsize=16,
     padding=3,
 )
