@@ -95,13 +95,15 @@ keys = [
 
 # groups = [Group(i) for i in "123456789"]
 groups = [
+    Group(name="1", label="", matches=[Match(wm_class="firefox")], layout="max"),
+    Group(name="2", label="", matches=[Match(wm_class="code-oss")], layout="columns"),
+    Group(name="3", label="", matches=[Match(wm_class="Steam")], layout="max"),
     Group(
-        name="1",
-        label="1",
-        matches=[Match(wm_class="firefox")],
+        name="4",
+        label="",
+        matches=[Match(wm_class="discord"), Match(wm_class="spotify")],
         layout="columns",
     ),
-    Group(name="2", label="2", matches=[Match(wm_class="spotify")], layout="columns"),
 ]
 
 for i in groups:
