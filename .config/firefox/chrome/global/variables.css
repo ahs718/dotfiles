@@ -146,9 +146,9 @@
 :root {
 	--tab-separator-opacity: .35 !important;
 
-	--toolbar-field-background-color: rgb(43, 42, 51) !important;
-	--toolbar-field-hover-background-color: rgb(43, 42, 51) !important;
-	--toolbar-field-focus-background-color: rgb(43, 42, 51) !important;
+	--toolbar-field-background-color: rgb(48, 45, 65) !important;
+	--toolbar-field-hover-background-color: rgb(48, 45, 65) !important;
+	--toolbar-field-focus-background-color: rgb(48, 45, 65) !important;
 }
 
 :root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary]) {
