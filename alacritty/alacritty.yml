@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.85
+  opacity: 0.97
   dimensions:
     columns: 80
     lines: 24
