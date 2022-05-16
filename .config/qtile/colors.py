@@ -1,7 +1,9 @@
-catppuccin_morning = {
-    "flamingo": "#F2CDCD",
+catppuccin = {
+    "lavender": "#C9CBFF",
     "mauve": "#DDB6F2",
     "pink": "#F5C2E7",
+    "flamingo": "#F2CDCD",
+    "rosewater": "#F5E0DC",
     "maroon": "#E8A2AF",
     "red": "#F28FAD",
     "peach": "#F8BD96",
@@ -10,10 +12,6 @@ catppuccin_morning = {
     "teal": "#B5E8E0",
     "blue": "#96CDFB",
     "sky": "#89DCEB",
-}
-
-
-catppuccin_night = {
     "black0": "#161320",
     "black1": "#1A1826",
     "black2": "#1E1E2E",
@@ -23,6 +21,4 @@ catppuccin_night = {
     "gray1": "#988BA2",
     "gray2": "#C3BAC6",
     "white": "#D9E0EE",
-    "lavender": "#C9CBFF",
-    "rosewater": "#F5E0DC",
 }

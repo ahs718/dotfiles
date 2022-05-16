@@ -21,7 +21,7 @@ from libqtile.lazy import lazy
 
 # from libqtile.utils import guess_terminal
 
-from colors import catppuccin_morning, catppuccin_night
+from colors import catppuccin, catppuccin
 
 from bar_transparent_rounded import bar1, bar2
 
@@ -136,26 +136,26 @@ for i in groups:
 
 layouts = [
     Stack(
-        border_normal=catppuccin_night["gray0"],
-        border_focus=catppuccin_morning["blue"],
+        border_normal=catppuccin["gray0"],
+        border_focus=catppuccin["blue"],
         border_width=2,
         num_stacks=1,
         margin=10,
     ),
     MonadTall(
-        border_normal=catppuccin_night["gray0"],
-        border_focus=catppuccin_morning["blue"],
+        border_normal=catppuccin["gray0"],
+        border_focus=catppuccin["blue"],
         margin=10,
         border_width=2,
         single_border_width=2,
         single_margin=10,
     ),
     Columns(
-        border_normal=catppuccin_night["gray0"],
-        border_focus=catppuccin_morning["blue"],
+        border_normal=catppuccin["gray0"],
+        border_focus=catppuccin["blue"],
         border_width=2,
-        border_normal_stack=catppuccin_night["gray0"],
-        border_focus_stack=catppuccin_morning["sky"],
+        border_normal_stack=catppuccin["gray0"],
+        border_focus_stack=catppuccin["sky"],
         border_on_single=2,
         margin=10,
         margin_on_single=10,
@@ -163,8 +163,8 @@ layouts = [
 ]
 
 floating_layout = Floating(
-    border_normal=catppuccin_night["gray0"],
-    border_focus=catppuccin_morning["red"],
+    border_normal=catppuccin["gray0"],
+    border_focus=catppuccin["red"],
     border_width=3,
     float_rules=[
         *Floating.default_float_rules,
@@ -193,7 +193,7 @@ widget_defaults = dict(
     font="Caskaydia Cove Nerd Font",
     fontsize=16,
     padding=10,
-    foreground=catppuccin_night["black1"],
+    foreground=catppuccin["black1"],
 )
 
 extension_defaults = widget_defaults.copy()
