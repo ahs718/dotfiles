@@ -1,4 +1,4 @@
-# Important links to make sure all dependencies are resolved
+## Important links to make sure all dependencies are resolved
 ### Pacstrap (base install):
 ```concole
 pacstrap /mnt base base-devel linux linux-firmware linux-headers dosfstools btrfs-progs efibootmgr git vim intel-ucode networkmanager
