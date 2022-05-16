@@ -36,8 +36,65 @@ keys = [
     Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
     Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    # Command Prompt
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    # dmenu integration
+    Key(
+        [mod],
+        "p",
+        lazy.run_extension(
+            DmenuRun(
+                font="Caskaydia Cove Nerd Font",
+                fontsize=16,
+                dmenu_commad="dmenu_run",
+                dmenu_prompt=" ",
+                dmenu_height=10,
+                dmenu_lines=15,
+                background=catppuccin["black1"],
+                foreground=catppuccin["gray2"],
+                selected_background=catppuccin["black1"],
+                selected_foreground=catppuccin["lavender"],
+                dmenu_bottom=False,
+            )
+        ),
+    ),
+    Key(
+        [mod, "shift"],
+        "p",
+        lazy.run_extension(
+            WindowList(
+                all_groups=True,
+                font="Caskaydia Cove Nerd Font",
+                fontsize=16,
+                dmenu_height=10,
+                dmenu_prompt=" ",
+                # dmenu_lines=15,
+                background=catppuccin["black1"],
+                foreground=catppuccin["gray2"],
+                selected_foreground=catppuccin["lavender"],
+                selected_background=catppuccin["black1"],
+            )
+        ),
+    ),
+    Key(
+        [mod, "control"],
+        "p",
+        lazy.run_extension(
+            CommandSet(
+                commands={
+                    "College notes": "alacritty -e vim ~/test.txt",
+                    "Dev notes": "alacritty -e vim ~/test.txt",
+                    "General notes": "alacritty -e ~/vim test.txt",
+                    "Other notes": "alacritty -e vim ~/test.txt",
+                },
+                background=catppuccin["black1"],
+                foreground=catppuccin["gray2"],
+                dmenu_prompt=" ",
+                dmenu_lines=10,
+                dmenu_height=10,
+                selected_foreground=catppuccin["black1"],
+                selected_background=catppuccin["gray2"],
+            )
+        ),
+    ),
     # Toggle floating and fullscreen
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen mode"),
     Key(
