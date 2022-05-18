@@ -32,8 +32,9 @@ terminal = "alacritty"
 keys = [
     # Launch applications
     Key([mod], "a", lazy.spawn("firefox"), desc="Launch firefox"),
-    Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
+    Key([mod], "d", lazy.spawn("discocss"), desc="Launch discord"),
     Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
+    Key([mod], "c", lazy.spawn("code"), desc="Launch vscode"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # dmenu integration
     Key(
@@ -81,7 +82,7 @@ keys = [
                 commands={
                     "College notes": "alacritty -e vim ~/test.txt",
                     "Dev notes": "alacritty -e vim ~/test.txt",
-                    "General notes": "alacritty -e ~/vim test.txt",
+                    "General notes": "alacritty -e vim ~/test.txt",
                     "Other notes": "alacritty -e vim ~/test.txt",
                 },
                 background=catppuccin["black1"],
@@ -226,7 +227,7 @@ floating_layout = Floating(
         Match(wm_class="blueman-manager"),
         Match(wm_class="pavucontrol"),
         Match(wm_class="bitwarden"),
-        Match(wm_class="thunar"),
+        Match(wm_class="Thunar"),
     ],
 )
 
@@ -255,12 +256,12 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/background.png",
+        wallpaper="~/.config/qtile/background.jpg",
         wallpaper_mode="stretch",
         top=bar1,
     ),
     Screen(
-        wallpaper="~/.config/qtile/background.png",
+        wallpaper="~/.config/qtile/background.jpg",
         wallpaper_mode="stretch",
         top=bar2,
     ),
