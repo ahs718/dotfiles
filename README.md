@@ -28,3 +28,5 @@ paru -S deadd-notifcation-center-bin spotify
 ```console
 sudo make install
 ```
+## Other Programs
+[AstroNvim](https://github.com/AstroNvim/AstroNvim)
