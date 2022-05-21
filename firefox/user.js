@@ -16,6 +16,7 @@ user_pref("network.prefetch-next", false);	// default is true
 user_pref("identity.fxaccounts.enabled", false);	// default is true
 user_pref("geo.enabled", false);	// default is true
 user_pref("dom.webnotifications.enabled", false);	// default is true
+user_pref("brower.sessionstore.resume_from_crash", false);	// default is true
 
 /**  CSS Theme Settings	  **/
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // default is false
