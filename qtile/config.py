@@ -34,10 +34,11 @@ keys = [
     # Launch applications
     Key([mod], "a", lazy.spawn("firefox"), desc="Launch firefox"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
-    Key([mod], "s", lazy.group[4].toscreen(), lazy.spawn("spotify"), desc="Launch spotify"),
+    Key([mod], "s", lazy.group[4].toscreen(),
+        lazy.spawn("spotify"), desc="Launch spotify"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch vscode"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    
+
     # Volume control
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 5%- unmute")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 5%+ unmute")),
@@ -47,7 +48,7 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl -a next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl -a previous")),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl -a play-pause")),
-    
+
     # dmenu integration
     Key(
         [mod],
@@ -108,7 +109,8 @@ keys = [
         ),
     ),
     # Toggle floating and fullscreen
-    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen mode"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(),
+        desc="Toggle fullscreen mode"),
     Key(
         [mod, "shift"],
         "space",
@@ -120,7 +122,8 @@ keys = [
     Key([mod], "Right", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(),
+        desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key(
@@ -173,12 +176,15 @@ keys = [
 
 # groups = [Group(i) for i in "123456789"]
 groups = [
-    Group(name="1", label="", matches=[Match(wm_class="firefox")], layout="stack"),
+    Group(name="1", label="", matches=[
+          Match(wm_class="firefox")], layout="stack"),
     Group(
         name="2", label="", matches=[Match(wm_class="code-oss")], layout="monadtall"
     ),
-    Group(name="3", label="", matches=[Match(wm_class="Steam")], layout="stack"),
-    Group(name="4", label="", matches=[Match(wm_class="discord")], layout="monadtall"),
+    Group(name="3", label="", matches=[
+          Match(wm_class="Steam")], layout="stack"),
+    Group(name="4", label="", matches=[
+          Match(wm_class="discord")], layout="monadtall"),
 ]
 
 for i in groups:
@@ -237,6 +243,8 @@ floating_layout = Floating(
         *Floating.default_float_rules,
         Match(wm_class="bitwarden"),
         Match(wm_class="Thunar"),
+        Match(wm_class="qbittorrent"),
+
     ],
 )
 
