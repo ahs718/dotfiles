@@ -1,5 +1,6 @@
 import os
 import subprocess
+from textwrap import fill
 from typing import List  # noqa: F401
 
 from libqtile import hook
@@ -36,6 +37,18 @@ keys = [
     Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch vscode"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    
+    # Volume control
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 5%- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 5%+ unmute")),
+    Key([], "XF86AudioMute", lazy.spawn("amixer set Master togglemute")),
+    Key([], "XF86AudioMicMute", lazy.spawn("amixer set Capture togglemute")),
+        # Audio
+    Key([], "XF86AudioNext", lazy.spawn("mpc next")),
+    Key([], "XF86AudioPrev", lazy.spawn("mpc prev")),
+    Key([], "XF86AudioPlay", lazy.spawn("mpc toggle")),
+    Key([], "XF86AudioStop", lazy.spawn("mpc stop")),
+    
     # dmenu integration
     Key(
         [mod],
@@ -165,8 +178,8 @@ groups = [
     Group(
         name="2", label="", matches=[Match(wm_class="code-oss")], layout="monadtall"
     ),
-    Group(name="3", label="", matches=[Match(wm_class="Steam")], layout="max"),
-    Group(name="4", label="", matches=[Match(wm_class="discord")], layout="columns"),
+    Group(name="3", label="", matches=[Match(wm_class="Steam")], layout="stack"),
+    Group(name="4", label="", matches=[Match(wm_class="discord")], layout="monadtall"),
 ]
 
 for i in groups:
@@ -252,8 +265,8 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(top=bar1),
-    Screen(top=bar2),
+    Screen(top=bar2, wallpaper="horizon.jpg", wallpaper_mode=fill),
+    Screen(top=bar1, wallpaper="horizon.jpg", wallpaper_mode=fill),
 ]
 
 dgroups_key_binder = None
