@@ -34,7 +34,7 @@ keys = [
     # Launch applications
     Key([mod], "a", lazy.spawn("firefox"), desc="Launch firefox"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
-    Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
+    Key([mod], "s", lazy.group[4].toscreen(), lazy.spawn("spotify"), desc="Launch spotify"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch vscode"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     
@@ -43,11 +43,10 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 5%+ unmute")),
     Key([], "XF86AudioMute", lazy.spawn("amixer set Master togglemute")),
     Key([], "XF86AudioMicMute", lazy.spawn("amixer set Capture togglemute")),
-        # Audio
-    Key([], "XF86AudioNext", lazy.spawn("mpc next")),
-    Key([], "XF86AudioPrev", lazy.spawn("mpc prev")),
-    Key([], "XF86AudioPlay", lazy.spawn("mpc toggle")),
-    Key([], "XF86AudioStop", lazy.spawn("mpc stop")),
+    # Audio
+    Key([], "XF86AudioNext", lazy.spawn("playerctl -a next")),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl -a previous")),
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl -a play-pause")),
     
     # dmenu integration
     Key(
@@ -265,8 +264,8 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(top=bar2, wallpaper="horizon.jpg", wallpaper_mode=fill),
-    Screen(top=bar1, wallpaper="horizon.jpg", wallpaper_mode=fill),
+    Screen(top=bar2, wallpaper="~/images/horizon.jpg", wallpaper_mode="fill"),
+    Screen(top=bar1, wallpaper="~/images/horizon.jpg", wallpaper_mode="fill"),
 ]
 
 dgroups_key_binder = None

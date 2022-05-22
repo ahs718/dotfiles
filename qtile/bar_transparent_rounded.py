@@ -55,9 +55,9 @@ bar1 = Bar(
         Spacer(length=100),
         Systray(
             padding=15,
-            # background='#00000000'
+            # background=catppuccin["black1"]
         ),
-        Spacer(length=500),
+        Spacer(length=10),
         left_half_circle(catppuccin["black1"]),
         Net(background=catppuccin["black1"], foreground=catppuccin["blue"]),
         right_half_circle(catppuccin["black1"]),
@@ -104,7 +104,6 @@ bar2 = Bar(
         right_half_circle(catppuccin["black1"]),
         Spacer(length=10),
         WindowName(foreground=catppuccin["black1"]),
-        Spacer(length=500),
         left_half_circle(catppuccin["black1"]),
         Net(background=catppuccin["black1"], foreground=catppuccin["blue"]),
         right_half_circle(catppuccin["black1"]),

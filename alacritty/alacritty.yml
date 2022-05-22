@@ -17,10 +17,10 @@ scrolling:
 
 font:
   normal:
-    family: CaskaydiaCove Nerd Font
-    style:  Book
+    family: Caskaydia Cove Nerd Font
+    style: Regular 
   bold:
-    family: CaskaydiaCove
+    family: Caskaydia Cove Nerd Font
     style:  Bold
   #italic:
     #family: CaskaydiaCove Nerd Font
