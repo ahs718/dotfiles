@@ -32,7 +32,7 @@ terminal = "alacritty"
 keys = [
     # Launch applications
     Key([mod], "a", lazy.spawn("firefox"), desc="Launch firefox"),
-    Key([mod], "d", lazy.spawn("discocss"), desc="Launch discord"),
+    Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
     Key([mod], "s", lazy.spawn("spotify"), desc="Launch spotify"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch vscode"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
@@ -42,7 +42,7 @@ keys = [
         "p",
         lazy.run_extension(
             DmenuRun(
-                font="Caskaydia Cove Nerd Font",
+                font="Caskaydia Cove Nerd Font Mono",
                 fontsize=16,
                 dmenu_commad="dmenu_run",
                 dmenu_prompt=" ",
@@ -62,7 +62,7 @@ keys = [
         lazy.run_extension(
             WindowList(
                 all_groups=True,
-                font="Caskaydia Cove Nerd Font",
+                font="Caskaydia Cove Nerd Font Mono",
                 fontsize=16,
                 dmenu_height=10,
                 dmenu_prompt=" ",
@@ -167,7 +167,6 @@ groups = [
     ),
     Group(name="3", label="", matches=[Match(wm_class="Steam")], layout="max"),
     Group(name="4", label="", matches=[Match(wm_class="discord")], layout="columns"),
-    Group(name="5", label="嗢", matches=[Match(wm_class="vlc")], layout="columns"),
 ]
 
 for i in groups:
@@ -224,8 +223,6 @@ floating_layout = Floating(
     border_width=3,
     float_rules=[
         *Floating.default_float_rules,
-        Match(wm_class="blueman-manager"),
-        Match(wm_class="pavucontrol"),
         Match(wm_class="bitwarden"),
         Match(wm_class="Thunar"),
     ],
@@ -246,7 +243,7 @@ mouse = [
 ]
 
 widget_defaults = dict(
-    font="Caskaydia Cove Nerd Font",
+    font="Caskaydia Cove Nerd Font Mono",
     fontsize=16,
     padding=10,
     foreground=catppuccin["black1"],
@@ -255,16 +252,8 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(
-        wallpaper="~/.config/qtile/background.jpg",
-        wallpaper_mode="stretch",
-        top=bar1,
-    ),
-    Screen(
-        wallpaper="~/.config/qtile/background.jpg",
-        wallpaper_mode="stretch",
-        top=bar2,
-    ),
+    Screen(top=bar1),
+    Screen(top=bar2),
 ]
 
 dgroups_key_binder = None
@@ -276,4 +265,4 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
-wmname = "LG3D"
+wmname = "Qtile"
