@@ -16,7 +16,7 @@ cd paru
 makepkg -si
 ```
 ```console
-paru -S deadd-notifcation-center-bin spotify
+paru -S spotify
 ```
 ### [dmenu patch:](https://github.com/bakkeby/dmenu-flexipatch)
 ```.h
