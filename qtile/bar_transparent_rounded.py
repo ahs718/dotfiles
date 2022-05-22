@@ -4,8 +4,7 @@ from libqtile.widget.groupbox import GroupBox
 from libqtile.widget.currentlayout import CurrentLayout
 from libqtile.widget.window_count import WindowCount
 from libqtile.widget.windowname import WindowName
-from libqtile.widget.cpu import CPU
-from libqtile.widget.memory import Memory
+from libqtile.widget.volume import Volume
 from libqtile.widget.net import Net
 from libqtile.widget.systray import Systray
 from libqtile.widget.clock import Clock
@@ -47,7 +46,8 @@ bar1 = Bar(
         right_half_circle(catppuccin["black1"]),
         Spacer(length=10),
         left_half_circle(catppuccin["black1"]),
-        Clock(background=catppuccin["black1"], format=" %a %I:%M %p %m-%d-%Y", foreground=catppuccin["pink"]),
+        Clock(background=catppuccin["black1"],
+              format=" %a %I:%M %p %m-%d-%Y", foreground=catppuccin["pink"]),
         right_half_circle(catppuccin["black1"]),
         Spacer(length=10),
         Prompt(foreground=catppuccin["black1"]),
@@ -59,7 +59,12 @@ bar1 = Bar(
         ),
         Spacer(length=10),
         left_half_circle(catppuccin["black1"]),
-        Net(background=catppuccin["black1"], foreground=catppuccin["blue"]),
+        Volume(fmt="Volume: {}",
+               background=catppuccin["black1"], foreground=catppuccin["blue"]),
+        right_half_circle(catppuccin["black1"]),
+        Spacer(length=10),
+        left_half_circle(catppuccin["black1"]),
+        Net(background=catppuccin["black1"], foreground=catppuccin["sky"]),
         right_half_circle(catppuccin["black1"]),
     ],
     margin=[10, 10, 5, 10],
@@ -100,12 +105,19 @@ bar2 = Bar(
         right_half_circle(catppuccin["black1"]),
         Spacer(length=10),
         left_half_circle(catppuccin["black1"]),
-        Clock(background=catppuccin["black1"], format=" %a %I:%M %p %m-%d-%Y", foreground=catppuccin["pink"]),
+        Clock(background=catppuccin["black1"],
+              format=" %a %I:%M %p %m-%d-%Y", foreground=catppuccin["pink"]),
         right_half_circle(catppuccin["black1"]),
         Spacer(length=10),
         WindowName(foreground=catppuccin["black1"]),
+        Spacer(length=10),
         left_half_circle(catppuccin["black1"]),
-        Net(background=catppuccin["black1"], foreground=catppuccin["blue"]),
+        Volume(fmt="Volume: {}",
+               background=catppuccin["black1"], foreground=catppuccin["blue"]),
+        right_half_circle(catppuccin["black1"]),
+        Spacer(length=10),
+        left_half_circle(catppuccin["black1"]),
+        Net(background=catppuccin["black1"], foreground=catppuccin["sky"]),
         right_half_circle(catppuccin["black1"]),
     ],
     margin=[10, 10, 5, 10],
