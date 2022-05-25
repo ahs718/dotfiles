@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/ahs/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/ahs/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/ahs/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -94,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/ahs/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/ahs/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/ahs/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -103,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ahs/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/home/ahs/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

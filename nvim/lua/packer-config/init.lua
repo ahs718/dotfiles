@@ -11,6 +11,11 @@ return require('packer').startup(function()
         as = "catppuccin"
     }) -- Catppuccin Color Scheme
     use 'kyazdani42/nvim-tree.lua' -- Nvim Tree
+    use 'rcarriga/nvim-notify' -- Notifications
+    use 'nvim-lualine/lualine.nvim' -- Status bar
+    use 'romgrk/barbar.nvim'
+
+    -- LSP plugins
     use 'neovim/nvim-lspconfig' -- LSP
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
