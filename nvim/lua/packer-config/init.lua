@@ -6,15 +6,14 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' -- Packer Plugin Manager
     use 'kyazdani42/nvim-web-devicons' -- Web Dev Icons
-    use({
-        "catppuccin/nvim",
-        as = "catppuccin"
-    }) -- Catppuccin Color Scheme
+    use({ "catppuccin/nvim", as = "catppuccin" }) -- Catppuccin Color Scheme
     use 'kyazdani42/nvim-tree.lua' -- Nvim Tree
     use 'rcarriga/nvim-notify' -- Notifications
     use 'nvim-lualine/lualine.nvim' -- Status bar
     use 'romgrk/barbar.nvim'
-
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'nvim-treesitter/nvim-treesitter-refactor'
+   
     -- LSP plugins
     use 'neovim/nvim-lspconfig' -- LSP
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
