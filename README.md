@@ -28,5 +28,3 @@ paru -S spotify
 ```console
 sudo make install
 ```
-## Other Programs
-[AstroNvim](https://github.com/AstroNvim/AstroNvim)
