@@ -28,7 +28,6 @@ end
 require("nvim-lsp-installer").setup {}
 local lspconfig = require("lspconfig")
 
-lspconfig.bashls.setup {}
 lspconfig.clangd.setup {}
 lspconfig.emmet_ls.setup {}
 lspconfig.html.setup {}
