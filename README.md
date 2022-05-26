@@ -28,3 +28,9 @@ paru -S spotify
 ```console
 sudo make install
 ```
+### Nvim Config
+Be sure to have ripgrep and npm installed. Manually run the following commands with Neovim open:
+```console
+:LspIntall clangd emmet_ls html pyright sumneko_lua
+:TSInstall cpp python html lua
+```
