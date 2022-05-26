@@ -1,10 +1,3 @@
-import os
-import subprocess
-from textwrap import fill
-from typing import List  # noqa: F401
-
-from libqtile import hook
-
 from libqtile.extension.dmenu import DmenuRun
 from libqtile.extension.window_list import WindowList
 from libqtile.extension.command_set import CommandSet
@@ -17,7 +10,7 @@ from libqtile.layout.floating import Floating
 
 # import widgets and bar
 
-from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
 # from libqtile.utils import guess_terminal
