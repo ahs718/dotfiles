@@ -18,6 +18,7 @@ return require('packer').startup(function()
         requires = { {"nvim-lua/plenary.nvim"} }
     }
     use "windwp/nvim-autopairs" -- Autpair brackets, quotes
+    use "akinsho/toggleterm.nvim" -- Toggleterm
     -- LSP plugins
     use "neovim/nvim-lspconfig" -- LSP
     use "williamboman/nvim-lsp-installer" -- LSP installer
