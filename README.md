@@ -39,5 +39,5 @@ Custom firefox theme, works alongside user.js
 
 ### Additional packages that I use
 ```console
-sudo pacman -S autopep8 bat clang feh htop lazygit neovim noto-fonts-emoji npm openssh prettier qbittorrent reflector steam stylua terminus-font tree unzip vim wget zsh zsh-autosuggestions zsh-syntax-highlighting
+sudo pacman -S autopep8 bat clang feh htop lazygit ncdu neovim noto-fonts-emoji npm openssh prettier qbittorrent reflector steam stylua terminus-font tree unzip vim wget zsh zsh-autosuggestions zsh-syntax-highlighting
 ```
