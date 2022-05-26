@@ -8,4 +8,5 @@ alias qt='cd ~/.config/qtile' # Navigates to qtile config directory
 alias nv='cd ~/.config/nvim' # Nagivates to neovim config directory
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:/home/ahs/.spicetify
