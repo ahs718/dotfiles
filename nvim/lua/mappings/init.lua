@@ -37,3 +37,7 @@ map('n', '<C-p>', ':BufferPick<CR>', opts)
 map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
 map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
+
+-- Telescope mappings
+map('n', '<leader>ff', ':Telescope find_files hidden=true<CR>', opts)
+map('n', '<leader>fg', ':Telescope live_grep hidden=true<CR>', opts)
