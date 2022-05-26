@@ -34,3 +34,4 @@ Be sure to have ripgrep and npm installed. Manually run the following commands w
 :LspIntall clangd emmet_ls html pyright sumneko_lua
 :TSInstall cpp python html lua
 ```
+### [MaterialFox](https://github.com/muckSponge/MaterialFox)
