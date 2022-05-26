@@ -272,8 +272,8 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(top=bar2, wallpaper="~/images/horizon.jpg", wallpaper_mode="fill"),
-    Screen(top=bar1, wallpaper="~/images/horizon.jpg", wallpaper_mode="fill"),
+    Screen(top=bar2),
+    Screen(top=bar1),
 ]
 
 dgroups_key_binder = None

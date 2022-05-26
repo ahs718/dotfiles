@@ -8,15 +8,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -24,15 +16,7 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -52,7 +36,7 @@ fi
 xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 1962x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --off &
 
 # Wallpaper
-feh --no-fehbg --bg-scale '/home/ahs/images/horizon.jpg' &
+feh --no-fehbg --bg-scale '/home/ahs/images/horizon.jpg'
 
 # Compositor
 picom -b &
