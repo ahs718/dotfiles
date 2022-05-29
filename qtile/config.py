@@ -23,10 +23,12 @@ keys = [
     # Launch applications
     Key([mod], "a", lazy.spawn("firefox"), desc="Launch firefox"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
+    Key([mod], "t", lazy.spawn("thunderbird"), desc="Launch thunderbird"),
     Key([mod], "s", lazy.group[4].toscreen(), lazy.spawn("spotify"), desc="Launch spotify"),
+    Key([mod], "i", lazy.spawn("idea"), desc="Launch Java IDE"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch vscode"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], 'p', lazy.spawn('rofi -show drun'), desc="Launch rofi menu"),
+    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Volume control
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 5%- unmute")),
@@ -75,9 +77,10 @@ keys = [
 # groups = [Group(i) for i in "123456789"]
 groups = [
     Group(name="1", label="", matches=[Match(wm_class="firefox")], layout="stack"),
-    Group(name="2", label="", matches=[Match(wm_class="code-oss")], layout="monadtall"),
-    Group(name="3", label="", matches=[Match(wm_class="Steam")], layout="stack"),
-    Group(name="4", label="", matches=[Match(wm_class="discord")], layout="monadtall"),
+    Group(name="2", label="", matches=[Match(wm_class="code-oss"), Match(wm_class="jetbrains-idea-ce")], layout="monadtall"),
+    Group(name="3", label="", matches=[Match(wm_class="Mail")], layout="monadtall"),
+    Group(name="4", label="", matches=[Match(wm_class="Steam")], layout="stack"),
+    Group(name="5", label="", matches=[Match(wm_class="discord")], layout="monadtall"),
 ]
 
 for i in groups:
@@ -159,4 +162,4 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
-wmname = "Qtile"
+wmname = "LG3D"
