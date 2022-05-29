@@ -35,7 +35,7 @@ alias cl='clear' # Clears screen
 alias v='nvim' # Opens neovim
 alias qt='cd ~/.config/qtile' # Navigates to qtile config directory
 alias nv='cd ~/.config/nvim' # Nagivates to neovim config directory
-
+alias dots='cd ~/projects/dotfiles'
 # Enabling installed zsh plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
