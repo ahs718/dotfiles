@@ -29,7 +29,7 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Aliases
-alias lsa="ls -lhaG --color=always | sed -re 's/^[^ ]* //'" # Lists all files including hidden ones in the list format
+alias lsa="ls -hla --color=auto" # Lists all files including hidden ones in the list format
 alias sx='startx' # Starts the window manager
 alias cl='clear' # Clears screen
 alias v='nvim' # Opens neovim
