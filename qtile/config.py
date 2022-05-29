@@ -1,7 +1,3 @@
-from libqtile.extension.dmenu import DmenuRun
-from libqtile.extension.window_list import WindowList
-from libqtile.extension.command_set import CommandSet
-
 # import layout objects
 from libqtile.layout.columns import Columns
 from libqtile.layout.xmonad import MonadTall
@@ -17,7 +13,7 @@ from libqtile.lazy import lazy
 
 from colors import catppuccin, catppuccin
 
-from bar_transparent_rounded import bar1, bar2
+from qtilebar import bar1, bar2
 
 mod = "mod4"
 terminal = "alacritty"
@@ -27,10 +23,10 @@ keys = [
     # Launch applications
     Key([mod], "a", lazy.spawn("firefox"), desc="Launch firefox"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
-    Key([mod], "s", lazy.group[4].toscreen(),
-        lazy.spawn("spotify"), desc="Launch spotify"),
+    Key([mod], "s", lazy.group[4].toscreen(), lazy.spawn("spotify"), desc="Launch spotify"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch vscode"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], 'p', lazy.spawn('rofi -show drun'), desc="Launch rofi menu"),
 
     # Volume control
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 5%- unmute")),
@@ -42,111 +38,25 @@ keys = [
     Key([], "XF86AudioPrev", lazy.spawn("playerctl -a previous")),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl -a play-pause")),
 
-    # dmenu integration
-    Key(
-        [mod],
-        "p",
-        lazy.run_extension(
-            DmenuRun(
-                font="Caskaydia Cove Nerd Font Mono",
-                fontsize=16,
-                dmenu_commad="dmenu_run",
-                dmenu_prompt=" ",
-                dmenu_height=10,
-                dmenu_lines=15,
-                background=catppuccin["black2"],
-                foreground=catppuccin["gray2"],
-                selected_background=catppuccin["black2"],
-                selected_foreground=catppuccin["lavender"],
-                dmenu_bottom=False,
-            )
-        ),
-    ),
-    Key(
-        [mod, "shift"],
-        "p",
-        lazy.run_extension(
-            WindowList(
-                all_groups=True,
-                font="Caskaydia Cove Nerd Font Mono",
-                fontsize=16,
-                dmenu_height=10,
-                dmenu_prompt=" ",
-                # dmenu_lines=15,
-                background=catppuccin["black2"],
-                foreground=catppuccin["gray2"],
-                selected_foreground=catppuccin["lavender"],
-                selected_background=catppuccin["black2"],
-            )
-        ),
-    ),
-    Key(
-        [mod, "control"],
-        "p",
-        lazy.run_extension(
-            CommandSet(
-                commands={
-                    "College notes": "alacritty -e vim ~/test.txt",
-                    "Dev notes": "alacritty -e vim ~/test.txt",
-                    "General notes": "alacritty -e vim ~/test.txt",
-                    "Other notes": "alacritty -e vim ~/test.txt",
-                },
-                background=catppuccin["black2"],
-                foreground=catppuccin["gray2"],
-                dmenu_prompt=" ",
-                dmenu_lines=10,
-                dmenu_height=10,
-                selected_foreground=catppuccin["black2"],
-                selected_background=catppuccin["gray2"],
-            )
-        ),
-    ),
     # Toggle floating and fullscreen
-    Key([mod], "f", lazy.window.toggle_fullscreen(),
-        desc="Toggle fullscreen mode"),
-    Key(
-        [mod, "shift"],
-        "space",
-        lazy.window.toggle_floating(),
-        desc="Toggle floating mode",
-    ),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen mode"),
+    Key([mod, "shift"], "space", lazy.window.toggle_floating(), desc="Toggle floating mode"),
     # Switch between windows
     Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "Right", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(),
-        desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key(
-        [mod, "shift"],
-        "Left",
-        lazy.layout.shuffle_left(),
-        desc="Move window to the left",
-    ),
-    Key(
-        [mod, "shift"],
-        "Right",
-        lazy.layout.shuffle_right(),
-        desc="Move window to the right",
-    ),
+    Key([mod, "shift"], "Left", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], "Right", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "Down", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key(
-        [mod, "control"],
-        "Left",
-        lazy.layout.grow_left(),
-        desc="Grow window to the left",
-    ),
-    Key(
-        [mod, "control"],
-        "Right",
-        lazy.layout.grow_right(),
-        desc="Grow window to the right",
-    ),
+    Key([mod, "control"], "Left", lazy.layout.grow_left(), desc="Grow window to the left"),
+    Key([mod, "control"], "Right", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "Down", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "Up", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
@@ -154,12 +64,7 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
@@ -169,34 +74,19 @@ keys = [
 
 # groups = [Group(i) for i in "123456789"]
 groups = [
-    Group(name="1", label="", matches=[
-          Match(wm_class="firefox")], layout="stack"),
-    Group(
-        name="2", label="", matches=[Match(wm_class="code-oss")], layout="monadtall"
-    ),
-    Group(name="3", label="", matches=[
-          Match(wm_class="Steam")], layout="stack"),
-    Group(name="4", label="", matches=[
-          Match(wm_class="discord")], layout="monadtall"),
+    Group(name="1", label="", matches=[Match(wm_class="firefox")], layout="stack"),
+    Group(name="2", label="", matches=[Match(wm_class="code-oss")], layout="monadtall"),
+    Group(name="3", label="", matches=[Match(wm_class="Steam")], layout="stack"),
+    Group(name="4", label="", matches=[Match(wm_class="discord")], layout="monadtall"),
 ]
 
 for i in groups:
     keys.extend(
         [
             # mod1 + letter of group = switch to group
-            Key(
-                [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
-            ),
+            Key([mod], i.name, lazy.group[i.name].toscreen(), desc="Switch to group {}".format(i.name)),
             # mod1 + shift + letter of group = move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name),
-                desc="move focused window to group {}".format(i.name),
-            ),
+            Key([mod, "shift"], i.name, lazy.window.togroup(i.name), desc="move focused window to group {}".format(i.name)),
         ]
     )
 
@@ -236,22 +126,13 @@ floating_layout = Floating(
         *Floating.default_float_rules,
         Match(wm_class="bitwarden"),
         Match(wm_class="Thunar"),
-        Match(wm_class="qbittorrent"),
-
     ],
 )
 
 # Drag floating layouts.
 mouse = [
-    Drag(
-        [mod],
-        "Button1",
-        lazy.window.set_position_floating(),
-        start=lazy.window.get_position(),
-    ),
-    Drag(
-        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
-    ),
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
