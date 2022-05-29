@@ -23,7 +23,7 @@ makepkg -si
 paru -S spotify nvim-packer-git spicetify-cli
 ```
 ### Nvim Config
-n order to set up Neovim, first run the following command inside Neovim:
+In order to set up Neovim, first run the following command inside Neovim:
 ```console
 :PackerSync
 ```
