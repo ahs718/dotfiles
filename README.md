@@ -18,17 +18,8 @@ makepkg -si
 ```console
 paru -S spotify nvim-packer-git spicetify-cli
 ```
-### [dmenu patch:](https://github.com/bakkeby/dmenu-flexipatch)
-```.h
-#define ALPHA_PATCH 1
-#define CASEINSENSITIVE_PATCH 1
-#define CENTER_PATCH 1
-#define LINE_HEIGHT_PATCH 1
-```
-```console
-sudo make install
-```
 ### Nvim Config
+
 Be sure to have ripgrep and npm installed. Manually run the following commands with Neovim open:
 ```console
 :LspIntall clangd emmet_ls html pyright sumneko_lua
@@ -39,7 +30,7 @@ Custom firefox theme, works alongside user.js
 
 ### Additional packages that I use
 ```console
-sudo pacman -S autopep8 bat clang feh htop lazygit ncdu neovim noto-fonts-emoji npm openssh prettier qbittorrent reflector steam stylua terminus-font tree unzip vim wget zsh zsh-autosuggestions zsh-syntax-highlighting
+sudo pacman -S autopep8 bat clang feh htop intellij-idea-community-edition jdk-openjdk lazygit ncdu neovim noto-fonts-emoji npm openssh prettier qbittorrent reflector steam stylua terminus-font tree unzip vim wget zsh zsh-autosuggestions zsh-syntax-highlighting
 ```
 
 ### [Rofi Menu Customization](https://github.com/catppuccin/rofi)
