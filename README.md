@@ -19,7 +19,11 @@ makepkg -si
 paru -S spotify nvim-packer-git spicetify-cli
 ```
 ### Nvim Config
-
+n order to set up Neovim, first run the following command inside Neovim:
+```console
+:PackerSync
+```
+Next, uncomment the lines in the `init.lua` file. <br>
 Be sure to have ripgrep and npm installed. Manually run the following commands with Neovim open:
 ```console
 :LspIntall clangd emmet_ls html pyright sumneko_lua
