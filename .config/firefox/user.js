@@ -23,3 +23,5 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // defau
 user_pref("svg.context-properties.content.enabled", true); 		// default is false
 user_pref("browser.tabs.tabClipWidth", 83);				// default is 140
 user_pref("browser.sessionstore.resume_from_crash", false); // default is true
+user_pref("browser.urlbar.trimURLs", false); // default is true
+user_pref("browser.urlbar.update2.engineAliasRefresh", true); // default is false
