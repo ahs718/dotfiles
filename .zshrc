@@ -3,10 +3,10 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 
 # Format the git branch name in the prompt
-zstyle ':vcs_info:git:*' formats '%F{111}<%b>%f '
+zstyle ':vcs_info:git:*' formats '%F{111}[%b]%f '
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST auto_cd
-PROMPT='%F{147}<${PWD/#$HOME/~}> ${vcs_info_msg_0_}%{$reset_color%}'
+PROMPT='%F{147}[${PWD/#$HOME/~}] ${vcs_info_msg_0_}%{$reset_color%}'
 # PROMPT="%F{147}%~%f ${vcs_info_msg_0_}%"
 
 # History
