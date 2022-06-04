@@ -29,6 +29,7 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Aliases
+alias ls='ls --color=auto'
 alias lsa="ls -hla --color=auto" # Lists all files including hidden ones in the list format
 alias sx='startx' # Starts the window manager
 alias cl='clear' # Clears screen
