@@ -33,7 +33,7 @@ Be sure to have ripgrep and npm installed. Manually run the following commands w
 :TSInstall cpp python html lua
 ```
 ## [MaterialFox](https://github.com/muckSponge/MaterialFox)
-Custom firefox theme, works alongside user.js
+Custom firefox theme, works alongside user.js <br>
 Commands to install:
 ```console
 git clone https://github.com/muckSponge/MaterialFox.git
