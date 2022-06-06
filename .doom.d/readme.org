@@ -4,6 +4,7 @@
 * Table of Contents :toc:
 - [[#init-file][Init File]]
 - [[#config-file][Config File]]
+- [[#packages-file][Packages File]]
 
 * Init File
 This file controls what Doom modules are enabled and what order they load in.
@@ -96,4 +97,15 @@ Display Line Numbers
 Default org directory
 #+begin_src elisp :tangle config.el
 (setq org-directory "~/org/")
+#+end_src
+
+Enable custom bullet point icons
+#+begin_src elisp :tangle config.el
+(require 'org-bullets)(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+end_src
+
+* Packages File
+Icons for bullet points in org mode
+#+begin_src elisp :tangle packages.el
+(package! org-bullets)
 #+end_src
