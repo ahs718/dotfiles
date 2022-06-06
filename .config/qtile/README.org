@@ -1,3 +1,14 @@
+#+title: Qtile Config
+#+property: header-args :tangle config.py
+* Qtile configuration
+Qtile is a window manager that is written and configured in python.
+Official documentation: https://docs.qtile.org/en/stable/
+
+This is my Qtile configuration!
+* Imports
+These are the qtile libraries in python that allow for the customization of the window manager.
+
+#+begin_src python
 #   layout objects
 from libqtile.layout.columns import Columns
 from libqtile.layout.xmonad import MonadTall
@@ -18,7 +29,10 @@ from libqtile.widget.systray import Systray
 from libqtile.widget.clock import Clock
 from libqtile.widget.spacer import Spacer
 from libqtile.widget.prompt import Prompt
-
+#+end_src
+* Colorscheme
+This section includes a dictionary that stores color hex codes for the catppuccin color scheme. This color scheme is also present in additional configurations for the programs that I use.
+#+begin_src python
 catppuccin = {
     "lavender": "#C9CBFF",
     "mauve": "#DDB6F2",
@@ -43,7 +57,10 @@ catppuccin = {
     "gray2": "#C3BAC6",
     "white": "#D9E0EE",
 }
-
+#+end_src
+* Keybindings
+Contains all of the keybindings for launching/switching applications, window management, and media playback.
+#+begin_src python
 mod = "mod4"
 terminal = "alacritty"
 keys = [
@@ -100,7 +117,10 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 ]
-
+#+end_src
+* Workspaces
+Contains all of the workspaces along with their labels. Additionally, window parameters are included to always open application in specific window groups.
+#+begin_src python
 groups = [
     Group(name="1", label="", matches=[Match(wm_class="firefox")], layout="stack"),
     Group(name="2", label="", matches=[Match(wm_class="code-oss"), Match(wm_class="jetbrains-idea-ce")], layout="monadtall"),
@@ -118,7 +138,10 @@ for i in groups:
             Key([mod, "shift"], i.name, lazy.window.togroup(i.name), desc="move focused window to group {}".format(i.name)),
         ]
     )
-
+#+end_src
+* Tiling/Floating Layouts
+Contains all of the different layout options for windows to be displayed in. Each layout organizes windows in a different way. Additionally, a floating layout is included for programs that are not necessary to be opened in the current tiling layout. These floating windows are able to be moved by the mouse. Window names are specified in certain parameters to always be opened in a floating layout.
+#+begin_src python
 # Tiling Layouts
 layouts = [
     Stack(
@@ -154,7 +177,7 @@ floating_layout = Floating(
     border_focus=catppuccin["red"],
     border_width=3,
     float_rules=[
-        *Floating.default_float_rules,
+        ,*Floating.default_float_rules,
         Match(wm_class="bitwarden"),
         Match(wm_class="Thunar"),
     ],
@@ -166,6 +189,10 @@ mouse = [
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
+#+end_src
+* Font, Monitor Layout, and Extras
+This section includes the default font to be used for all Qtile widgets, specifcally the qtile bar. Additionally, two bars are included to be displayed for each monitor. Lastly, there are other behavioral settings that are enabled, such as the ability to switch focus between windows via hovering the mouse.
+#+begin_src python
 
 widget_defaults = dict(
     font="Caskaydia Cove Nerd Font Mono",
@@ -191,7 +218,19 @@ focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
 wmname = "LG3D"
-
+#+end_src
+* Left Bar
+Configures the first bar object to display various widgets. The widgets in my configuration include:
+- GroupBox: displays workspaces
+- CurrentLayout : displays current window layout
+- WindowCount : displays the number of open windows
+- Clock : dislays the current time
+- Prompt : prompts user for input (not able to be interacted with due to integration with the rofi app launcher)
+- WindowName : displays the focused window title
+- Systray : adds an interactive system tray
+- Volume : displays current volume percentage with the ability to change the volume by using the scroll wheel while hovering over the icon. Additionally, offers the ability to mute when left clicking the icon.
+- Net : displays the current internet upload and download speed.
+#+begin_src python
 bar1 = Bar(
     [
         GroupBox(
@@ -235,7 +274,17 @@ bar1 = Bar(
     opacity=0.85,
     size=25,
 )
-
+#+end_src
+* Right bar
+Configures the other bar object to display various widgets. The widgets in my configuration include:
+- GroupBox: displays workspaces
+- CurrentLayout : displays current window layout
+- WindowCount : displays the number of open windows
+- Clock : dislays the current time
+- WindowName : displays the focused window title
+- Volume : displays current volume percentage with the ability to change the volume by using the scroll wheel while hovering over the icon. Additionally, offers the ability to mute when left clicking the icon.
+- Net : displays the current internet upload and download speed.i
+#+begin_src python
 bar2 = Bar(
     [
         GroupBox(
@@ -274,3 +323,4 @@ bar2 = Bar(
     opacity=0.85,
     size=25,
 )
+#+end_src
