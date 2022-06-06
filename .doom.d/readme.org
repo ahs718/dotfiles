@@ -3,8 +3,14 @@
 
 * Table of Contents :toc:
 - [[#init-file][Init File]]
-- [[#config-file][Config File]]
-- [[#packages-file][Packages File]]
+- [[#appearance][Appearance]]
+  - [[#cursor-highlighting][Cursor highlighting]]
+- [[#org-mode][Org Mode]]
+  - [[#default-org-directory][Default org directory]]
+  - [[#disable-company-in-org-mode][Disable company in org mode]]
+  - [[#icons-for-bullet-points-in-org-mode][Icons for bullet points in org mode]]
+- [[#code-formatting][Code formatting]]
+  - [[#python][Python]]
 
 * Init File
 This file controls what Doom modules are enabled and what order they load in.
@@ -71,41 +77,48 @@ This file controls what Doom modules are enabled and what order they load in.
        :config
        (default +bindings +smartparens))
 #+end_src
-* Config File
-Personal information
+* Appearance
 #+begin_src elisp :tangle config.el
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
-#+end_src
-
-Font family
-#+begin_src elisp :tangle config.el
-(setq doom-font (font-spec :family "CaskaydiaCove Nerd Font" :size 17)
+(setq doom-theme 'doom-tokyo-night) ;; Theme
+(setq display-line-numbers-type t) ;; Line numbers
+(setq doom-font (font-spec :family "CaskaydiaCove Nerd Font" :size 17) ;; Font family
       doom-variable-pitch-font (font-spec :family "CaskaydiaCove Nerd Font" :size 17))
 #+end_src
-
-Doom Emacs theme
+** Cursor highlighting
+#+begin_src elisp :tangle packages.el
+(package! beacon)
+#+end_src
 #+begin_src elisp :tangle config.el
-(setq doom-theme 'doom-tokyo-night)
+(use-package! beacon)
+(after! beacon (beacon-mode 1))
 #+end_src
 
-Display Line Numbers
-#+begin_src elisp :tangle config.el
-(setq display-line-numbers-type t)
-#+end_src
-
-Default org directory
+* Org Mode
+** Default org directory
 #+begin_src elisp :tangle config.el
 (setq org-directory "~/org/")
 #+end_src
-
-Enable custom bullet point icons
+** Disable company in org mode
 #+begin_src elisp :tangle config.el
-(require 'org-bullets)(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(after! org
+  (remove-hook 'org-mode-hook #'auto-fill-mode)
+  (setq company-global-modes '(not org-mode))
+  )
 #+end_src
-
-* Packages File
-Icons for bullet points in org mode
+** Icons for bullet points in org mode
 #+begin_src elisp :tangle packages.el
 (package! org-bullets)
+#+end_src
+#+begin_src elisp :tangle config.el
+(require 'org-bullets)(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))) ;; Custom bullet point icons
+#+end_src
+* Code formatting
+** Python
+#+begin_src elisp :tangle packages.el
+(package! python-black)
+#+end_src
+#+begin_src elisp :tangle config.el
+(use-package! python-black
+  :after python
+  :hook (python-mode . python-black-on-save-mode-enable-dwim))
 #+end_src
