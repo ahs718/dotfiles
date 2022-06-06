@@ -1,0 +1,111 @@
+#+title: Doom Emacs Configuration
+#+author: Aiden Schulman
+
+* Table of Contents :toc:
+- [[#init-file][Init File]]
+- [[#config-file][Config File]]
+- [[#packages-file][Packages File]]
+
+* Init File
+This file controls what Doom modules are enabled and what order they load in.
+#+begin_src elisp :tangle init.el
+(doom! :input
+
+       :completion
+       company           ; the ultimate code completion backend
+       vertico           ; the search engine of the future
+
+       :ui
+       doom              ; what makes DOOM look the way it does
+       doom-dashboard    ; a splash screen for Emacs
+       hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
+       modeline          ; snazzy, Atom-inspired modeline, plus API
+       ophints           ; highlight the region an operation acts on
+       (popup +defaults)   ; temporary windows
+       tabs              ; a tab bar for Emacs
+       treemacs          ; a project drawer, like neotree
+       vc-gutter         ; vcs diff in the fringe
+       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
+       workspaces        ; tab emulation, persistence & separate workspaces
+
+       :editor
+       (evil +everywhere)
+       file-templates
+       fold
+       snippets
+
+       :emacs
+       dired             ; making dired pretty [functional]
+       electric          ; smarter, keyword-based electric-indent
+       undo              ; persistent, smarter undo
+       vc                ; version-control
+
+       :term
+       vterm             ; the best terminal emulation in Emacs
+
+       :checkers
+       syntax
+
+       :tools
+       (eval +overlay)     ; run code, run (also, repls)
+       lookup              ; navigate your code and its documentation
+       lsp               ; M-x vscode
+       magit             ; a git porcelain for Emacs
+
+       :os
+       (:if IS-MAC macos)  ; improve compatibility with macOS
+
+       :lang
+       (cc +lsp)
+       emacs-lisp
+       json
+       (java +lsp)
+       javascript
+       lua
+       markdown
+       org
+       python
+       sh
+       web
+
+       :config
+       (default +bindings +smartparens))
+#+end_src
+* Config File
+Personal information
+#+begin_src elisp :tangle config.el
+(setq user-full-name "John Doe"
+      user-mail-address "john@doe.com")
+#+end_src
+
+Font family
+#+begin_src elisp :tangle config.el
+(setq doom-font (font-spec :family "CaskaydiaCove Nerd Font" :size 17)
+      doom-variable-pitch-font (font-spec :family "CaskaydiaCove Nerd Font" :size 17))
+#+end_src
+
+Doom Emacs theme
+#+begin_src elisp :tangle config.el
+(setq doom-theme 'doom-tokyo-night)
+#+end_src
+
+Display Line Numbers
+#+begin_src elisp :tangle config.el
+(setq display-line-numbers-type t)
+#+end_src
+
+Default org directory
+#+begin_src elisp :tangle config.el
+(setq org-directory "~/org/")
+#+end_src
+
+Enable custom bullet point icons
+#+begin_src elisp :tangle config.el
+(require 'org-bullets)(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+end_src
+
+* Packages File
+Icons for bullet points in org mode
+#+begin_src elisp :tangle packages.el
+(package! org-bullets)
+#+end_src

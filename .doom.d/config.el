@@ -9,3 +9,5 @@
 (setq display-line-numbers-type t)
 
 (setq org-directory "~/org/")
+
+(require 'org-bullets)(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
