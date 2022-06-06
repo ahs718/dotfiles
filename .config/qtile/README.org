@@ -1,6 +1,5 @@
-#+title: Qtile Config
+#+title: Qtile configuration
 #+property: header-args :tangle config.py
-* Qtile configuration
 Qtile is a window manager that is written and configured in python.
 Official documentation: https://docs.qtile.org/en/stable/
 
