@@ -33,3 +33,4 @@ lspconfig.emmet_ls.setup {}
 lspconfig.html.setup {}
 lspconfig.pyright.setup {}
 lspconfig.sumneko_lua.setup {}
+lspconfig.jdtls.setup {}
