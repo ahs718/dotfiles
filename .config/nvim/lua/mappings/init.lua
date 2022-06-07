@@ -38,9 +38,12 @@ map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
 map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 
+map('n', '<leader>ps', ':PackerSync<CR>', opts)
 -- Telescope mappings
 map('n', '<leader>ff', ':Telescope find_files hidden=true<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep hidden=true<CR>', opts)
+map('n', '<leader>fh', ':Telescope oldfiles hidden=true<CR>', opts)
+map('n', '<leader>fr', ':Telescope frecency hidden=true<CR>', opts)
 
 -- Toggleterm setting variables as commands
 local Terminal  = require('toggleterm.terminal').Terminal
@@ -64,7 +67,7 @@ function _NODE_TOGGLE()
 end
 
 -- Toggleterm binding keys to activate functions
-vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>lua _HTOP_TOGGLE()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>ht", "<cmd>lua _HTOP_TOGGLE()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>tn", "<cmd>lua _NODE_TOGGLE()<CR>", {noremap = true, silent = true})
