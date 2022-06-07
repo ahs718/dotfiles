@@ -17,8 +17,61 @@ return require('packer').startup(function()
         "nvim-telescope/telescope.nvim",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
+    use {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+            require"telescope".load_extension("frecency")
+        end,
+        requires = {"tami5/sqlite.lua"}
+    }
     use "windwp/nvim-autopairs" -- Autpair brackets, quotes
     use "akinsho/toggleterm.nvim" -- Toggleterm
+
+    use({
+        "goolord/alpha-nvim",
+        requires = {"kyazdani42/nvim-web-devicons"},
+        config = function()
+            local alpha = require("alpha")
+            local dashboard = require("alpha.themes.dashboard")
+            local function footer()
+                local total_plugins = #vim.tbl_keys(packer_plugins)
+                local datetime = os.date(" %m-%d-%Y   %H:%M:%S")
+                local version = vim.version()
+                local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
+
+                return datetime .. "   " .. total_plugins .. " plugins" .. nvim_version_info
+            end
+
+            local logo = {
+                [[           █████                                                       ███                 ]],
+                [[          ░░███                                                       ░░░                  ]],
+                [[  ██████   ░███████    █████                   ████████   █████ █████ ████  █████████████  ]],
+                [[ ░░░░░███  ░███░░███  ███░░      ██████████   ░░███░░███ ░░███ ░░███ ░░███ ░░███░░███░░███ ]],
+                [[  ███████  ░███ ░███ ░░█████    ░░░░░░░░░░     ░███ ░███  ░███  ░███  ░███  ░███ ░███ ░███ ]],
+                [[ ███░░███  ░███ ░███  ░░░░███                  ░███ ░███  ░░███ ███   ░███  ░███ ░███ ░███ ]],
+                [[░░████████ ████ █████ ██████                   ████ █████  ░░█████    █████ █████░███ █████]],
+                [[ ░░░░░░░░ ░░░░ ░░░░░ ░░░░░░                   ░░░░ ░░░░░    ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ ]],
+            }
+
+            dashboard.section.header.val = logo
+
+            dashboard.section.buttons.val = {
+                dashboard.button("<Leader>ff", "  Find File"),
+                dashboard.button("<Leader>fr", "  Find Recent"),
+                dashboard.button("<Leader>fg", "  Find Word"),
+                dashboard.button("<Leader>ps", "  Update plugins"),
+                dashboard.button("q", "  Quit", ":qa<cr>")
+            }
+
+            dashboard.section.footer.val = footer()
+            dashboard.section.footer.opts.hl = "Constant"
+
+            alpha.setup(dashboard.opts)
+
+            vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
+        end
+        }
+    )
     -- LSP plugins
     use "neovim/nvim-lspconfig" -- LSP
     use "williamboman/nvim-lsp-installer" -- LSP installer
