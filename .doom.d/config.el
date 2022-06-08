@@ -8,11 +8,6 @@
 
 (setq org-directory "~/org/")
 
-(after! org
-  (remove-hook 'org-mode-hook #'auto-fill-mode)
-  (setq company-global-modes '(not org-mode))
-  )
-
 (require 'org-bullets)(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))) ;; Custom bullet point icons
 
 (use-package! python-black

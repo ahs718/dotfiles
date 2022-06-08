@@ -7,7 +7,6 @@
   - [[#cursor-highlighting][Cursor highlighting]]
 - [[#org-mode][Org Mode]]
   - [[#default-org-directory][Default org directory]]
-  - [[#disable-company-in-org-mode][Disable company in org mode]]
   - [[#icons-for-bullet-points-in-org-mode][Icons for bullet points in org mode]]
 - [[#code-formatting][Code formatting]]
   - [[#python][Python]]
@@ -16,7 +15,6 @@
 This file controls what Doom modules are enabled and what order they load in.
 #+begin_src elisp :tangle init.el
 (doom! :input
-
        :completion
        company           ; the ultimate code completion backend
        vertico           ; the search engine of the future
@@ -97,13 +95,7 @@ This file controls what Doom modules are enabled and what order they load in.
 ** Default org directory
 #+begin_src elisp :tangle config.el
 (setq org-directory "~/org/")
-#+end_src
-** Disable company in org mode
-#+begin_src elisp :tangle config.el
-(after! org
-  (remove-hook 'org-mode-hook #'auto-fill-mode)
-  (setq company-global-modes '(not org-mode))
-  )
+
 #+end_src
 ** Icons for bullet points in org mode
 #+begin_src elisp :tangle packages.el
