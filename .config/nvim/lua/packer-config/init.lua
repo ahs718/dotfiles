@@ -56,10 +56,10 @@ return require('packer').startup(function()
             dashboard.section.header.val = logo
 
             dashboard.section.buttons.val = {
-                dashboard.button("<Leader>ff", "  Find File"),
-                dashboard.button("<Leader>fr", "  Find Recent"),
-                dashboard.button("<Leader>fg", "  Find Word"),
-                dashboard.button("<Leader>ps", "  Update plugins"),
+                dashboard.button("<SPC>ff", "  Find File"),
+                dashboard.button("<SPC>fr", "  Find Recent"),
+                dashboard.button("<SPC>fg", "  Find Word"),
+                dashboard.button("<SPC>ps", "  Update plugins"),
                 dashboard.button("q", "  Quit", ":qa<cr>")
             }
 
