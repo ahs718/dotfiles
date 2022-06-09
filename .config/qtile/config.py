@@ -24,6 +24,7 @@ keys = [
     Key([mod], "a", lazy.spawn("firefox"), desc="Launch firefox"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
     Key([mod], "b", lazy.spawn("bitwarden"), desc="Launch bitwarden"),
+    Key([mod], "e", lazy.spawn('emacsclient --create-frame --alternate-editor=""'), desc="Launch emacs"),
     Key([mod], "t", lazy.spawn("thunderbird"), desc="Launch thunderbird"),
     Key([mod], "s", lazy.group[4].toscreen(), lazy.spawn("spotify"), desc="Launch spotify"),
     Key([mod], "i", lazy.spawn("idea"), desc="Launch intellij"),
