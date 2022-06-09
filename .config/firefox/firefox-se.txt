@@ -1,4 +1,4 @@
 1. Set the following to true in about:config:
 browser.urlbar.update2.engineAliasRefresh
 2. Add the following for the engine url:
-https://searx.be/search?q=%s
+https://search.ononoki.org/search?q=%s
