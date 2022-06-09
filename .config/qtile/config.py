@@ -1,58 +1,32 @@
-#   layout objects
+# import layout objects
 from libqtile.layout.columns import Columns
 from libqtile.layout.xmonad import MonadTall
 from libqtile.layout.stack import Stack
 from libqtile.layout.floating import Floating
 
-#   widgets and bar
+# import widgets and bar
+
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.bar import Bar
-from libqtile.widget.groupbox import GroupBox
-from libqtile.widget.currentlayout import CurrentLayout
-from libqtile.widget.window_count import WindowCount
-from libqtile.widget.windowname import WindowName
-from libqtile.widget.volume import Volume
-from libqtile.widget.net import Net
-from libqtile.widget.systray import Systray
-from libqtile.widget.clock import Clock
-from libqtile.widget.spacer import Spacer
-from libqtile.widget.prompt import Prompt
 
-catppuccin = {
-    "lavender": "#C9CBFF",
-    "mauve": "#DDB6F2",
-    "pink": "#F5C2E7",
-    "flamingo": "#F2CDCD",
-    "rosewater": "#F5E0DC",
-    "blue": "#96CDFB",
-    "sky": "#89DCEB",
-    "teal": "#B5E8E0",
-    "red": "#F28FAD",
-    "maroon": "#E8A2AF",
-    "peach": "#F8BD96",
-    "yellow": "#FAE3B0",
-    "green": "#ABE9B3",
-    "black0": "#161320",
-    "black1": "#1A1826",
-    "black2": "#1E1E2E",
-    "black3": "#302D41",
-    "black4": "#575268",
-    "gray0": "#6E6C7E",
-    "gray1": "#988BA2",
-    "gray2": "#C3BAC6",
-    "white": "#D9E0EE",
-}
+# from libqtile.utils import guess_terminal
+
+from colors import catppuccin, catppuccin
+
+from qtilebar import bar1, bar2
 
 mod = "mod4"
 terminal = "alacritty"
+# terminal = guess_terminal()
+
 keys = [
     # Launch applications
     Key([mod], "a", lazy.spawn("firefox"), desc="Launch firefox"),
     Key([mod], "d", lazy.spawn("discord"), desc="Launch discord"),
+    Key([mod], "b", lazy.spawn("bitwarden"), desc="Launch bitwarden"),
     Key([mod], "t", lazy.spawn("thunderbird"), desc="Launch thunderbird"),
     Key([mod], "s", lazy.group[4].toscreen(), lazy.spawn("spotify"), desc="Launch spotify"),
-    Key([mod], "i", lazy.spawn("idea"), desc="Launch Java IDE"),
+    Key([mod], "i", lazy.spawn("idea"), desc="Launch intellij"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch vscode"),
     Key([mod], 'p', lazy.spawn('rofi -show drun'), desc="Launch rofi menu"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
@@ -70,30 +44,30 @@ keys = [
     # Toggle floating and fullscreen
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen mode"),
     Key([mod, "shift"], "space", lazy.window.toggle_floating(), desc="Toggle floating mode"),
-
     # Switch between windows
     Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "Right", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-
     # Move windows between left/right columns or move up/down in current stack.
+    # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "Left", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "Right", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "Down", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up(), desc="Move window up"),
-
-    # Grow windows
+    # Grow windows. If current window is on the edge of screen and direction
+    # will be to screen edge - window would shrink.
     Key([mod, "control"], "Left", lazy.layout.grow_left(), desc="Grow window to the left"),
     Key([mod, "control"], "Right", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "Down", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "Up", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-
     # Toggle between split and unsplit sides of stack.
+    # Split = all windows displayed
+    # Unsplit = 1 window displayed, like Max layout, but still with
+    # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
@@ -101,12 +75,13 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 ]
 
+# groups = [Group(i) for i in "123456789"]
 groups = [
     Group(name="1", label="", matches=[Match(wm_class="firefox")], layout="stack"),
     Group(name="2", label="", matches=[Match(wm_class="code-oss"), Match(wm_class="jetbrains-idea-ce")], layout="monadtall"),
-    Group(name="3", label="", matches=[Match(wm_class="Mail")], layout="monadtall"),
+    Group(name="3", label="", matches=[Match(wm_class="Mail"), Match(wm_class="bitwarden")], layout="monadtall"),
     Group(name="4", label="", matches=[Match(wm_class="Steam")], layout="stack"),
-    Group(name="5", label="", matches=[Match(wm_class="discord")], layout="monadtall"),
+    Group(name="5", label="", matches=[Match(wm_class="discord"), Match(wm_class="spotify")], layout="monadtall"),
 ]
 
 for i in groups:
@@ -119,7 +94,6 @@ for i in groups:
         ]
     )
 
-# Tiling Layouts
 layouts = [
     Stack(
         border_normal=catppuccin["gray0"],
@@ -136,26 +110,24 @@ layouts = [
         single_border_width=2,
         single_margin=10,
     ),
-    Columns(
-        border_normal=catppuccin["gray0"],
-        border_focus=catppuccin["blue"],
-        border_width=2,
-        border_normal_stack=catppuccin["gray0"],
-        border_focus_stack=catppuccin["sky"],
-        border_on_single=2,
-        margin=10,
-        margin_on_single=10,
-    ),
+   # Columns(
+   #     border_normal=catppuccin["gray0"],
+   #     border_focus=catppuccin["blue"],
+   #     border_width=2,
+   #     border_normal_stack=catppuccin["gray0"],
+   #     border_focus_stack=catppuccin["sky"],
+   #     border_on_single=2,
+   #     margin=10,
+   #     margin_on_single=10,
+   # ),
 ]
 
-# Floating Layout
 floating_layout = Floating(
     border_normal=catppuccin["gray0"],
     border_focus=catppuccin["red"],
     border_width=3,
     float_rules=[
         *Floating.default_float_rules,
-        Match(wm_class="bitwarden"),
         Match(wm_class="Thunar"),
     ],
 )
@@ -191,86 +163,3 @@ focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
 wmname = "LG3D"
-
-bar1 = Bar(
-    [
-        GroupBox(
-            disable_drag=True,
-            active=catppuccin["gray2"],
-            inactive=catppuccin["gray0"],
-            highlight_method="line",
-            block_highlight_text_color=catppuccin["lavender"],
-            borderwidth=0,
-            highlight_color=catppuccin["black1"],
-            background=catppuccin["black1"],
-        ),
-        Spacer(length=30),
-        CurrentLayout(
-            background=catppuccin["black1"],
-            foreground=catppuccin["lavender"]
-        ),
-        Spacer(length=30),
-        WindowCount(
-            text_format="缾 {num}",
-            background=catppuccin["black1"],
-            foreground=catppuccin["mauve"],
-            show_zero=True,
-        ),
-        Spacer(length=30),
-        Clock(background=catppuccin["black1"], format=" %a %I:%M %p %m-%d-%Y", foreground=catppuccin["pink"]),
-        Spacer(length=30),
-        Prompt(foreground=catppuccin["black1"]),
-        WindowName(foreground=catppuccin["white"]),
-        Spacer(length=100),
-        Systray(
-            padding=15,
-        ),
-        Spacer(length=30),
-        Volume(fmt="Volume: {}", background=catppuccin["black1"], foreground=catppuccin["blue"]),
-        Spacer(length=30),
-        Net(background=catppuccin["black1"], foreground=catppuccin["sky"]),
-    ],
-    margin=[10, 10, 5, 10],
-    background=catppuccin["black1"],
-    opacity=0.85,
-    size=25,
-)
-
-bar2 = Bar(
-    [
-        GroupBox(
-            disable_drag=True,
-            active=catppuccin["gray2"],
-            inactive=catppuccin["gray0"],
-            highlight_method="line",
-            block_highlight_text_color=catppuccin["lavender"],
-            borderwidth=0,
-            highlight_color=catppuccin["black1"],
-            background=catppuccin["black1"],
-        ),
-        Spacer(length=30),
-        CurrentLayout(
-            background=catppuccin["black1"],
-            foreground=catppuccin["lavender"],
-        ),
-        Spacer(length=30),
-        WindowCount(
-            text_format="缾 {num}",
-            background=catppuccin["black1"],
-            foreground=catppuccin["mauve"],
-            show_zero=True,
-        ),
-        Spacer(length=30),
-        Clock(background=catppuccin["black1"], format=" %a %I:%M %p %m-%d-%Y", foreground=catppuccin["pink"]),
-        Spacer(length=30),
-        WindowName(foreground=catppuccin["white"]),
-        Spacer(length=30),
-        Volume(fmt="Volume: {}", background=catppuccin["black1"], foreground=catppuccin["blue"]),
-        Spacer(length=30),
-        Net(background=catppuccin["black1"], foreground=catppuccin["sky"]),
-    ],
-    margin=[10, 10, 5, 10],
-    background=catppuccin["black1"],
-    opacity=0.85,
-    size=25,
-)
