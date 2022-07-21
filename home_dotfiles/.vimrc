@@ -19,14 +19,12 @@ syntax enable
 
 " User Interface Options
 set laststatus=2
-set ruler
 set wildmenu
 
-set cursorline
 set number
 set mouse=a
 set title
 
-" Miiscellaneous Options
+" Miscellaneous Options
 set history=1000
 set noswapfile
