@@ -39,6 +39,7 @@ map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 
 map('n', '<leader>ps', ':PackerSync<CR>', opts)
+map('n', '<leader>mm', ':MarkdownPreviewToggle<CR>', opts)
 -- Telescope mappings
 map('n', '<leader>ff', ':Telescope find_files hidden=true<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep hidden=true<CR>', opts)

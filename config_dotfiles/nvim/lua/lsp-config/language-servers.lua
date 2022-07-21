@@ -34,3 +34,4 @@ lspconfig.html.setup {}
 lspconfig.pyright.setup {}
 lspconfig.sumneko_lua.setup {}
 lspconfig.jdtls.setup {}
+lspconfig.marksman.setup {}
