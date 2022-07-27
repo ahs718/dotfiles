@@ -42,7 +42,7 @@ def open_powermenu():
 
 
 def open_calendar():
-    qtile.cmd_spawn("" + home + "/home/dani/.local/bin/toggle_cal")
+    qtile.cmd_spawn("" + home + "/home/ahs/.local/bin/toggle_cal")
 
 
 # TODO fix

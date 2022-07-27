@@ -32,20 +32,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-# monitor config
-xrandr --output DVI-D-1 --mode 1920x1080 --pos 1967x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off
-xsetroot -cursor_name left_ptr
+
 
 # wallpaper config
-DISPLAY=:0 feh --bg-scale --no-fehbg '/home/ahs/.images/yosemite2.jpg' &
-DISPLAY=:1 feh --bg-scale --no-fehbg '/home/ahs/.images/yosemite2.jpg' &
-
-# startup processes
-export PATH="/home/ahs/.local/bin:$PATH"
-picom -b &
-eww daemon &
-volctl &
-nm-applet &
-mkfifo /tmp/vol-icon && ~/.config/qtile/scripts/vol_icon.sh &
+# DISPLAY=:0 feh --bg-scale --no-fehbg '/home/ahs/.images/yosemite2.jpg' &
+# DISPLAY=:1 feh --bg-scale --no-fehbg '/home/ahs/.images/yosemite2.jpg' &
 
 qtile start

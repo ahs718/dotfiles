@@ -1,15 +1,15 @@
 # Catppuccin colors
 colors = [
-    ["#DDB6F2", "#DDB6F2"],  #  0 mauve
-    ["#F5C2E7", "#F5C2E7"],  #  1 pink
-    ["#E8A2AF", "#E8A2AF"],  #  2 maroon
-    ["#F28FAD", "#F28FAD"],  #  3 red
-    ["#F8BD96", "#F8BD96"],  #  4 peach
-    ["#FAE3B0", "#FAE3B0"],  #  5 yellow
-    ["#ABE9B3", "#ABE9B3"],  #  6 green
-    ["#B5E8E0", "#B5E8E0"],  #  7 teal
-    ["#96CDFB", "#96CDFB"],  #  8 blue
-    ["#89DCEB", "#89DCEB"],  #  9 sky
+    ["#DDB6F2", "#DDB6F2"],  # 0 mauve
+    ["#F5C2E7", "#F5C2E7"],  # 1 pink
+    ["#E8A2AF", "#E8A2AF"],  # 2 maroon
+    ["#F28FAD", "#F28FAD"],  # 3 red
+    ["#F8BD96", "#F8BD96"],  # 4 peach
+    ["#FAE3B0", "#FAE3B0"],  # 5 yellow
+    ["#ABE9B3", "#ABE9B3"],  # 6 green
+    ["#B5E8E0", "#B5E8E0"],  # 7 teal
+    ["#96CDFB", "#96CDFB"],  # 8 blue
+    ["#89DCEB", "#89DCEB"],  # 9 sky
     ["#161320", "#161320"],  # 10 black 0
     ["#1A1826", "#1A1826"],  # 11 black 1
     ["#1E1E2E", "#1E1E2E"],  # 12 black 2
@@ -57,8 +57,8 @@ workspace_names = [
 ]
 
 # General
-wallpaper_main = "~/.config/qtile/wallpapers/hk1.jpg"
-wallpaper_sec = "~/.config/qtile/wallpapers/hk1.jpg"
+wallpaper_main = "~/.images/yosemite2.jpg"
+wallpaper_sec = "~/.images/yosemite2.jpg"
 
 # Hardware
 network = "enp4s0"  # network interface name
