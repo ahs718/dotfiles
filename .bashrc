@@ -53,9 +53,12 @@ function parse_git_dirty {
 		echo ""
 	fi
 }
-
-export PS1="\[\e[34m\]\W\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\] "
+export PS1="➜  \[\e[34m\]\W\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\] "
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
+
+# Symlink dotfiles    
+alias sync_dots="cp -rsf ~/Projects/dotfiles/. ~"
+
