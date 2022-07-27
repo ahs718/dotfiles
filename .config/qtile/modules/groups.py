@@ -24,3 +24,47 @@ workspaces = [
     {"name": workspace_names[6], "key": "7", "matches": [
         Match(wm_class="notion-app")], "lay": "bsp"},
 ]
+
+groups = [Group(i) for i in "123456789"]
+
+for workspace in workspaces:
+    matches = workspace["matches"] if "matches" in workspace else None
+    groups.append(
+        Group(workspace["name"], matches=matches, layout=workspace["lay"]))
+    keys.append(
+        Key(
+            [mod],
+            workspace["key"],
+            lazy.group[workspace["name"]].toscreen(toggle=True),
+            desc="Focus this desktop",
+        )
+    )
+    keys.append(
+        Key(
+            [mod, shift],
+            workspace["key"],
+            *(
+                lazy.window.togroup(workspace["name"]),
+                lazy.group[workspace["name"]].toscreen(toggle=True),
+            ),
+            desc="Move focused window to another group",
+        )
+    )
+
+groups.append(
+    ScratchPad(
+        "scratchpad",
+        [
+            DropDown(
+                "term",
+                "kitty",
+                opacity=1,
+                x=0.1,
+                y=0.15,
+                width=0.8,
+                height=0.7,
+                on_focus_lost_hide=True,
+            ),
+        ],
+    )
+)
