@@ -13,7 +13,7 @@ function parse_git_branch() {
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_dirty`
-		echo "git:(${BRANCH}${STAT})"
+		echo " git:(${BRANCH}${STAT})"
 	else
 		echo ""
 	fi
@@ -54,4 +54,8 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[34m\]\W\[\e[m\] \[\e[31m\]\`parse_git_branch\`\[\e[m\] "
+export PS1="\[\e[34m\]\W\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\] "
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
