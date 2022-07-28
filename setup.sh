@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Variables
-dotfiles_dir=~/dotfiles/src
+dotfiles_dir=~/Projects/dotfiles/src
 
 # Delete existing dot files and folders
 sudo rm -rf ~/.vimrc >/dev/null 2>&1
