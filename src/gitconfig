@@ -1,0 +1,16 @@
+[user]
+	name = Aiden Schulman
+	email = aidenhschulman@gmail.com
+[init]
+	defaultBranch = main
+[color]
+    ui = true
+    branch = true
+    diff = true
+    interactive = true
+    status = true
+[color "status"]
+    added = green
+    changed = red
+    deleted = red
+    untracked = yellow
