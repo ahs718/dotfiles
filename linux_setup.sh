@@ -27,7 +27,7 @@ ln -sf $dotfiles_dir/Typora ~/.config/Typora && echo "added Typora files"
 ln -sf $dotfiles_dir/bat ~/.config/bat && echo "added bat files"
 ln -sf $dotfiles_dir/btop ~/.config/btop && echo "added btop files"
 ln -sf $dotfiles_dir/fish ~/.config/fish
-rm ~/.config/fish/functions/{code.fish} && echo "added fish files"
+rm ~/.config/fish/functions/code.fish && echo "added fish files"
 ln -sf $dotfiles_dir/images ~/.images && echo "added images"
 ln -sf $dotfiles_dir/kitty ~/.config/kitty && echo "added kitty terminal files"
 # ln -sf $dotfiles_dir/konsole ~/.config/konsole && echo "added konsole files"
