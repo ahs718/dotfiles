@@ -34,7 +34,7 @@ Run one of the following scripts:
 -   In order to use the Firefox custom css theme and user.js file, you can use the script provided in the repository.
 
     ```bash
-    ./ff_theme_userjs.sh
+    ./ff_config.sh
     ```
 
 ### Extensions
