@@ -21,18 +21,18 @@ cp $dotfiles_dir/git/.gitconfig ~/.gitconfig
 cp $dotfiles_dir/vim/.vimrc ~/.vimrc
 cp $dotfiles_dir/zsh/.zshrc ~/.zshrc
 
-cp -r $dotfiles_dir/Typora ~/.config/Typora
-cp -r $dotfiles_dir/alacritty ~/.config/alacritty
-cp -r $dotfiles_dir/bat ~/.config/bat
-cp -r $dotfiles_dir/btop ~/.config/btop
-cp -r $dotfiles_dir/doom ~/.doom.d
-cp -r $dotfiles_dir/fish ~/.config/fish
-cp -r $dotfiles_dir/images ~/.images
-cp -r $dotfiles_dir/kitty ~/.config/kitty
-cp -r $dotfiles_dir/konsole ~/.config/konsole
-cp -r $dotfiles_dir/latte ~/.config/latte
-cp -r $dotfiles_dir/neofetch ~/.config/neofetch
-cp -r $dotfiles_dir/nvim ~/.config/nvim
-cp -r $dotfiles_dir/picom ~/.config/picom
+ln -sf $dotfiles_dir/Typora ~/.config/Typora
+# ln -sf $dotfiles_dir/alacritty ~/.config/alacritty
+ln -sf $dotfiles_dir/bat ~/.config/bat
+ln -sf $dotfiles_dir/btop ~/.config/btop
+# ln -sf $dotfiles_dir/doom ~/.doom.d
+ln -sf $dotfiles_dir/fish ~/.config/fish
+ln -sf $dotfiles_dir/images ~/.images
+ln -sf $dotfiles_dir/kitty ~/.config/kitty
+# ln -sf $dotfiles_dir/konsole ~/.config/konsole
+ln -sf $dotfiles_dir/latte ~/.config/latte
+ln -sf $dotfiles_dir/neofetch ~/.config/neofetch
+ln -sf $dotfiles_dir/nvim ~/.config/nvim
+# ln -sf $dotfiles_dir/picom ~/.config/picom
 
 echo "Install finished!"
