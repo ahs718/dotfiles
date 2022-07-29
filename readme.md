@@ -6,7 +6,7 @@
 -   In order to get use these configurations, you can use one of the two scripts included in the repository.
 -   Both of the scripts symlink the config files in the repository to their respective locations in the filesystem. Therefore, it is advised to *not* delete the repo after running the script.
 
-## Installation
+## Use Dotfiles
 
 Clone the repository:
 
