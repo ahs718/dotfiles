@@ -17,17 +17,17 @@ sudo rm -rf ~/.config/ >/dev/null 2>&1
 # Create symlinks in the home & .config folder
 # Comment out the config files you do not want to symlink
 mkdir ~/.config
-ln -sf $dotfiles_dir/bash/.bashrc ~/.bashrc && echo "added .bashrc ..."
-ln -sf $dotfiles_dir/git/.gitconfig ~/.gitconfig && echo "added .gitconfig ..."
-ln -sf $dotfiles_dir/vim/.vimrc ~/.vimrc && echo "added .vimrc ..."
-ln -sf $dotfiles_dir/zsh/.zshrc ~/.zshrc && echo "added .zshrc ..."
+ln -sf $dotfiles_dir/bash/.bashrc ~/.bashrc && echo "added .bashrc"
+ln -sf $dotfiles_dir/git/.gitconfig ~/.gitconfig && echo "added .gitconfig"
+ln -sf $dotfiles_dir/vim/.vimrc ~/.vimrc && echo "added .vimrc"
+ln -sf $dotfiles_dir/zsh/.zshrc ~/.zshrc && echo "added .zshrc"
 
-ln -sf $dotfiles_dir/bat ~/.config/bat && echo "added bat files ..."
-ln -sf $dotfiles_dir/btop ~/.config/btop && echo "added btop files ..."
-# ln -sf $dotfiles_dir/doom-emacs ~/.doom.d && echo "added doom-emacs files ..."
-ln -sf $dotfiles_dir/fish ~/.config/fish && echo "added fish files ..."
-ln -sf $dotfiles_dir/images ~/.images && echo "added images ..."
-ln -sf $dotfiles_dir/nvim ~/.config/nvim && echo "added neovim files ..."
-ln -sf $dotfiles_dir/neofetch ~/.config/neofetch && echo "added neofetch files ..."
+ln -sf $dotfiles_dir/bat ~/.config/bat && echo "added bat files"
+ln -sf $dotfiles_dir/btop ~/.config/btop && echo "added btop files"
+# ln -sf $dotfiles_dir/doom-emacs ~/.doom.d && echo "added doom-emacs files"
+ln -sf $dotfiles_dir/fish ~/.config/fish && echo "added fish files"
+ln -sf $dotfiles_dir/images ~/.images && echo "added images"
+ln -sf $dotfiles_dir/nvim ~/.config/nvim && echo "added neovim files"
+ln -sf $dotfiles_dir/neofetch ~/.config/neofetch && echo "added neofetch files"
 
 echo "Install finished!"
