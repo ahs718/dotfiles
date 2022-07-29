@@ -50,6 +50,10 @@ Run one of the following scripts:
 -   [Return YouTube Dislike](https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/)
 -   [Reddit Enhancement Suite](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/)
 
+### Themes
+
+-   [Catppuccin Lavender](https://addons.mozilla.org/en-US/firefox/addon/catppuccin-mocha-lavender/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+
 ## (Arch Linux) AUR Helper
 
 ```bash
