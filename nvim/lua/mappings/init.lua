@@ -48,14 +48,14 @@ map('n', '<leader>fr', ':Telescope frecency hidden=true<CR>', opts)
 
 -- Toggleterm setting variables as commands
 local Terminal  = require('toggleterm.terminal').Terminal
-local htop = Terminal:new({ cmd = "htop", direction = "float", hidden = true })
+local btop = Terminal:new({ cmd = "btop", direction = "float", hidden = true })
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
 local python = Terminal:new({ cmd = "python", direction = "float", hidden = true })
 local node = Terminal:new({ cmd = "node", direction = "float", hidden = true })
 
 -- Toggleterm opening commands using the functions
-function _HTOP_TOGGLE()
-    htop:toggle()
+function _BTOP_TOGGLE()
+    btop:toggle()
 end
 function _LAZYGIT_TOGGLE()
     lazygit:toggle()
@@ -68,7 +68,7 @@ function _NODE_TOGGLE()
 end
 
 -- Toggleterm binding keys to activate functions
-vim.api.nvim_set_keymap("n", "<leader>ht", "<cmd>lua _HTOP_TOGGLE()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>bt", "<cmd>lua _BTOP_TOGGLE()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>tn", "<cmd>lua _NODE_TOGGLE()<CR>", {noremap = true, silent = true})
