@@ -50,7 +50,7 @@ map('n', '<leader>fr', ':Telescope frecency hidden=true<CR>', opts)
 local Terminal  = require('toggleterm.terminal').Terminal
 local btop = Terminal:new({ cmd = "btop", direction = "float", hidden = true })
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
-local python = Terminal:new({ cmd = "python", direction = "float", hidden = true })
+local python = Terminal:new({ cmd = "python3", direction = "float", hidden = true })
 local node = Terminal:new({ cmd = "node", direction = "float", hidden = true })
 
 -- Toggleterm opening commands using the functions
