@@ -49,11 +49,3 @@ fi
 # Navigation Aliases
 alias g211='cd ~/Documents/CS211 && lazygit'
 export EDITOR=nvim
-
-# Start fish shell
-if [ -z "$STARTEDFISH" ];
-then
-    export STARTEDFISH=1;
-    exec fish;
-    exit;
-fi
