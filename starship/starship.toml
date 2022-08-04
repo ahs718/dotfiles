@@ -1,6 +1,5 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
-
 format = """
 [](#9A348E)\
 $username\
@@ -122,6 +121,6 @@ format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
 [time]
 disabled = false
-time_format = "%R"                           # Hour:Minute Format
+time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A"
 format = '[[ ♥ $time ](bg:#33658A)]($style)'
