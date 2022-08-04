@@ -12,8 +12,7 @@ sudo rm -rf ~/.gitconfig >/dev/null 2>&1
 sudo rm -rf ~/.xinitrc >/dev/null 2>&1
 sudo rm -rf ~/.images >/dev/null 2>&1
 
-sudo rm -rf ~/.config/ >/dev/null 2>&1
-sudo rm -rf ~/.config/{bat,btop,fish,neofetch,nvim} >/dev/null 2>&1
+sudo rm -rf ~/.config/{bat,btop,fish,neofetch,nvim,starship.toml} >/dev/null 2>&1
 
 # Create symlinks in the home & .config folder
 # Comment out the config files you do not want to symlink
@@ -27,6 +26,7 @@ ln -sf $dotfiles_dir/bat ~/.config/bat && echo "added bat files"
 cp -r $dotfiles_dir/btop ~/.config/btop && echo "added btop files"
 # ln -sf $dotfiles_dir/doom-emacs ~/.doom.d && echo "added doom-emacs files"
 cp -r $dotfiles_dir/fish ~/.config/fish && echo "added fish files"
+ln -sf $dotfiles_dir/starship/starship.toml ~/.config && echo "added starship"
 ln -sf $dotfiles_dir/images ~/.images && echo "added images"
 ln -sf $dotfiles_dir/nvim ~/.config/nvim && echo "added neovim files"
 ln -sf $dotfiles_dir/neofetch ~/.config/neofetch && echo "added neofetch files"

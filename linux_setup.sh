@@ -12,7 +12,7 @@ sudo rm -rf ~/.gitconfig >/dev/null 2>&1
 sudo rm -rf ~/.xinitrc >/dev/null 2>&1
 sudo rm -rf ~/.images >/dev/null 2>&1
 
-sudo rm -rf ~/.config/{Typora,bat,btop,fish,kitty,latte,neofetch,nvim,picom,konsole,alacritty} >/dev/null 2>&1
+sudo rm -rf ~/.config/{Typora,bat,btop,fish,kitty,latte,neofetch,nvim,picom,konsole,alacritty,starship.toml} >/dev/null 2>&1
 
 mkdir -p ~/.config >/dev/null 2>&1
 
@@ -28,6 +28,7 @@ ln -sf $dotfiles_dir/Typora ~/.config/Typora && echo "added Typora files"
 ln -sf $dotfiles_dir/bat ~/.config/bat && echo "added bat files"
 cp -r $dotfiles_dir/btop ~/.config/btop && echo "added btop files"
 cp -r $dotfiles_dir/fish ~/.config/fish && echo "added fish files"
+ln -sf $dotfiles_dir/starship/starship.toml ~/.config && echo "added starship"
 ln -sf $dotfiles_dir/images ~/.images && echo "added images"
 ln -sf $dotfiles_dir/kitty ~/.config/kitty && echo "added kitty terminal files"
 # ln -sf $dotfiles_dir/konsole ~/.config/konsole && echo "added konsole files"
