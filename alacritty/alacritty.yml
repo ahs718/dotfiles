@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.97
+  opacity: 1
   dimensions:
     columns: 80
     lines: 24
@@ -17,10 +17,10 @@ scrolling:
 
 font:
   normal:
-    family: Caskaydia Cove Nerd Font
-    style: Regular 
+    family: CaskaydiaCove Nerd Font
+    style: SemiBold 
   bold:
-    family: Caskaydia Cove Nerd Font
+    family: CaskaydiaCove Nerd Font
     style:  Bold
   #italic:
     #family: CaskaydiaCove Nerd Font
@@ -30,6 +30,12 @@ font:
     #style: BoldItalic
   size: 14 
 draw_bold_text_with_bright_colors: true
+
+# Shell
+shell:
+  program: /bin/fish
+#  args:
+#      - --login
 
 # Catppuccin!
 colors:
