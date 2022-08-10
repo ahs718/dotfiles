@@ -4,7 +4,6 @@
 
 -   These are the dotfiles for different applications that I use on linux and macOS. 
 -   In order to get use these configurations, you can use one of the two scripts included in the repository.
--   Both of the scripts symlink the config files in the repository to their respective locations in the filesystem. Therefore, it is advised to *not* delete the repo after running the script.
 
 ## Use Dotfiles
 
@@ -15,29 +14,22 @@ git clone https://github.com/ahs718/dotfiles.git
 cd dotfiles
 ```
 
-Run one of the following scripts:
+## Tokyo Night Theme
 
-### Linux
+-   The configuration files in this repository utilize the [Tokyo Night](https://github.com/stronk-dev/Tokyo-Night-Linux) theme.
 
-```bash
-./linux_setup.sh
-```
+## Additional Programs
 
-### MacOS
+### (Arch Linux) AUR Helper
 
 ```bash
-./osx_setup.sh
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
 ```
 
-## Firefox CSS Theme and user.js
-
--   In order to use the Firefox custom css theme and user.js file, you can use the script provided in the repository.
-
-    ```bash
-    ./ff_config.sh
-    ```
-
-### Extensions
+### Firefox Extensions And Themes
 
 -   [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
     -   [uBlock settings file](firefox/ublock-settings.txt)
@@ -49,40 +41,4 @@ Run one of the following scripts:
 -   [SponsorBlock](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)
 -   [Return YouTube Dislike](https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/)
 -   [Reddit Enhancement Suite](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/)
-
-### Themes
-
--   [Catppuccin Lavender](https://addons.mozilla.org/en-US/firefox/addon/catppuccin-mocha-lavender/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-
-## (Arch Linux) AUR Helper
-
-```bash
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
-
-## Neovim
-
-### Prerequisites
-
--   Ensure you have the following packages installed
-
-    ```bash
-    paru -S nvim-packer-git nodejs npm ripgrep
-    ```
-
--   In order to set up Neovim, ensure you have nvim-packer-git (AUR package) installed.
-
--   Run the following command inside Neovim
-
-    ```bash
-    :PackerSync
-    ```
-
--   Run the following commands with Neovim open:
-
-    ```bash
-    :LspIntall clangd emmet_ls html jdtls marksman pyright sumneko_lua
-    ```
+-   [Tokyo Night](https://addons.mozilla.org/en-US/firefox/addon/tokyo-night-milav/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
