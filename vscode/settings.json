@@ -1,0 +1,142 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "clangd.detectExtensionConflicts": false,
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.preserveFocus": false,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.temporaryFileName": "temp",
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "php": "C:\\php\\php.exe",
+        "python": "python3",
+        "perl": "perl",
+        "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
+        "go": "go run",
+        "html": "open $fileName",
+        "java": "cd $dir && java $fileName",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && mkdir -p bin && cd bin && g++ ../*.cpp -o $fileNameWithoutExt && $dirbin/$fileNameWithoutExt"
+        // "cpp": "cd $dir && mkdir -p bin && cd bin && g++ ../$fileName -o $fileNameWithoutExt && $dirbin/$fileNameWithoutExt",
+    },
+    "editor.formatOnSave": true,
+    "workbench.editor.enablePreview": false,
+    "explorer.confirmDelete": false,
+    "terminal.integrated.fontSize": 16,
+    "workbench.startupEditor": "none",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "punctuation.definition.comment",
+                    "variable.function",
+                    "entity.name.function",
+                    "support.function.any-method",
+                    "variable.function",
+                    "keyword.control.directive",
+                    "punctuation.definition.directive",
+                    "entity.name.namespace",
+                    "constant.language",
+                    "keyword.control.import.python",
+                    "source.python",
+                    "storage.type.function.python",
+                    "meta.function.python",
+                    "variable.parameter",
+                    "keyword.other.using.directive"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "editor.minimap.enabled": false,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "explorer.confirmDragAndDrop": false,
+    "editor.fontLigatures": false,
+    "git.enableSmartCommit": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.defaultProfile.osx": "fish (2)",
+    "editor.parameterHints.enabled": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "files.autoSave": "afterDelay",
+    "files.associations": { "*.html": "html" },
+    "liveServer.settings.donotVerifyTags": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.linkedEditing": true,
+    "prettier.tabWidth": 4,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.formatting.provider": "autopep8",
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.inlayHints.enabled": "off",
+    "code-runner.enableAppInsights": false,
+    "editor.bracketPairColorization.enabled": false,
+    "terminal.integrated.letterSpacing": 1,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "prettier.printWidth": 140,
+    "html.format.templating": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "django-html": "html",
+        "html": "html"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "material-icon-theme.showWelcomeMessage": false,
+    "code-runner.fileDirectoryAsCwd": true,
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "tabnine.experimentalAutoImports": true,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "args": ["-l"],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh",
+            "args": ["-l"]
+        },
+        "fish": {
+            "path": "fish",
+            "args": ["-l"]
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        },
+        "fish (2)": {
+            "path": "/opt/homebrew/bin/fish"
+        }
+    },
+    "workbench.colorTheme": "Tokyo Night",
+    "Lua.telemetry.enable": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    }
+}
