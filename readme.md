@@ -1,8 +1,5 @@
 # My Dotfiles
 
-- These are the dotfiles for different applications that I use on linux and macOS.
-- In order to get use these configurations, you can use one of the two scripts included in the repository.
-
 ## Use Dotfiles
 
 Clone the repository:
