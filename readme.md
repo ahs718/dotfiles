@@ -36,4 +36,4 @@ makepkg -si
 - [SponsorBlock](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)
 - [Return YouTube Dislike](https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/)
 - [Reddit Enhancement Suite](https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/)
-- [Tokyo Night](https://addons.mozilla.org/en-US/firefox/addon/tokyo-night-milav/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+- [Tokyo Night](https://addons.mozilla.org/en-US/firefox/addon/tokyonight_vim/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
