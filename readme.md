@@ -1,17 +1,21 @@
-# My Dotfiles
+# KDE Tokyo Night Theme
 
-## Use Dotfiles
+![First Screenshot](.screenshots/Screen1.png)
 
-Clone the repository:
+![Second Screenshot](.screenshots/Screen2.png)
 
-```bash
-git clone https://github.com/ahs718/dotfiles.git
-cd dotfiles
-```
-
-## Tokyo Night Theme
-
-- The configuration files in this repository utilize the [Tokyo Night](https://github.com/stronk-dev/Tokyo-Night-Linux) theme.
+-   WM: KWin (with tiling using [Bismuth](https://github.com/Bismuth-Forge/bismuth))
+-   Global theme: [Breeze Dark](https://store.kde.org/p/1168533)
+-   Application Style: [Lightly](https://github.com/Luwx/Lightly)
+-   Colors: [Tokyo Night](https://github.com/nonetrix/tokyonight-kde)
+-   Plasma Style: Breeze Dark
+-   Window Decorations: Breeze Dark
+-   Icons: [Tela](https://github.com/vinceliuice/Tela-icon-theme)
+-   Neofetch theme: [Custom](https://github.com/ahs718/dotfiles/blob/main/neofetch/config.conf) (based on Chick2D's [neofetch themes](https://github.com/chick2d/neofetch-themes) repository)
+-   Tokyo Night theme for Spotify (and other programs): [Tokyo-Night-Linux](https://github.com/stronk-dev/Tokyo-Night-Linux)
+-   Neovim config: [AstroNvim](https://github.com/AstroNvim/AstroNvim) with [tokyonight](https://github.com/folke/tokyonight.nvim) theme plugin
+-   Left panel and top menu bar are both default plasma panels
+    -   Top menu bar widgets: [Text command](https://store.kde.org/p/1704465/), [Window Title Applet](https://store.kde.org/p/1274218/), [Better Inline Clock](https://store.kde.org/p/1245902)
 
 ## Additional Programs
 
