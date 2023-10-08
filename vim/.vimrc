@@ -28,3 +28,4 @@ set title
 " Miscellaneous Options
 set history=1000
 set noswapfile
+
